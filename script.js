@@ -101,6 +101,7 @@ function loadEverything(scrolling) {
             const priceSec = document.createElement("div")
             priceSec.classList.add("priceSection")
             const prodPrice = document.createElement("span")
+            prodPrice.classList.add("price")
             prodPrice.innerHTML = `${item.price} <i class="fa-solid fa-coins"></i>`
             const prodBtn = document.createElement("button")
             prodBtn.classList.add("cart")
