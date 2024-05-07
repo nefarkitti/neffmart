@@ -1,0 +1,463 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/*@import url('https://db.onlinewebfonts.com/c/975a5a4b60d2801c3382561ee634109b?family=Hypermarket+W00+Regular');*/ /* uncomment when release */
+@import url('https://fonts.googleapis.com/css2?family=Linefont:wght@4..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+:root {
+    --accent: #eb144c;
+
+    --ratings-accent: #ff5722;
+    --travelling-accent: #ff9307;
+    --shopping-accent: #2196f3;
+    --gofundme-accent: #00d084;
+    --images-accent: #673ab7;
+    --youtube-accent: rgb(255, 58, 58);
+    --thing: 2px;
+
+    --menu-bg: rgb(246, 246, 246);
+    --menu-bg-darker: rgb(242, 242, 242);
+    --inventory-bg: rgb(220, 220, 220);
+    --inventory-item-hover: rgb(197, 197, 197);
+    --important-bg: rgb(183, 55, 55);
+    --room-item: white;
+    --font-colour: black;
+
+    --body-bg: url("assets/memphis-mini.png");
+    --game-bg: url('assets/misc.png');
+    --result-bg: url("assets/dots.png");
+
+    --border: grey;
+
+    --navbar-height: 80px;
+
+} /*copied from neffbox ez*/
+
+body {
+    margin: 0;
+    background-image: var(--result-bg);
+    animation-name: example;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+}
+*:not(.fa-solid,.fa-brands) {
+    /*font-family: "Rubik", sans-serif;*/
+    font-family: "Poppins", sans-serif;
+}
+
+div.navigation {
+    position: fixed;
+    width: 100%;
+    z-index: 9999999;
+}
+nav {
+    width: 100%;
+    height: var(--navbar-height);
+    background-color: var(--shopping-accent);
+    user-select: none;
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+nav:not(.alt) {
+    padding-right: 10px;
+}
+nav.alt {
+    background-color: black;
+    height: calc(var(--navbar-height) / 1.3);
+}
+nav.adbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+nav.adbar div.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav.adbar div.line {
+    background-image: linear-gradient(black 20%, rgb(167, 167, 167) 50%, black 80%);
+    width: 1px;
+    height: 100%;
+    background-color: white;
+}
+div.container div {
+    margin-left: 10px;
+}
+nav.adbar i {
+    font-size:30px;
+}
+nav .logo {
+    display: flex;
+    align-items: center;
+}
+nav .logo span {
+    font-size: calc(var(--navbar-height) / 2);
+    font-weight: 500;
+    color: white;
+}
+nav .logo img {
+    height: var(--navbar-height);
+}
+
+span.searchbar {
+    background-color: var(--room-item);
+    padding: 5px;
+    border-radius: 20px;
+    border: var(--border) 1px solid;
+    box-shadow: 0px 2px 2px black;
+    color: black;
+    width: 400px;
+    height: calc(var(--navbar-height) - 40px);
+    vertical-align: middle;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+span.searchbar input {
+    box-shadow: none;
+    border: none;
+    border: 0;
+    background-color: var(--lighter);
+    padding: 5px;
+    width: 90%;
+    font-size: 15px;
+}
+
+span.searchbar input:focus-visible {
+    outline: none;
+}
+span.searchbar i {
+    background-color: black;
+    height: 40px;
+    width: 40px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    font-size: 20px;
+    filter: opacity(50%);
+    transition: .2s;
+}
+span.searchbar i:hover {
+    cursor: pointer;
+    filter: opacity(100%);
+    transition: .2s;
+}
+
+div.other {
+    display: flex;
+}
+div.tab img {
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+div.tab i {
+    font-size: 30px;
+    margin-right: 10px;
+}
+div.tab {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 600;
+    padding: 8px;
+    border-radius: 30px;
+    transition: .2s;
+}
+div.tab:hover {
+    background-color: #1c77c1;
+    cursor: pointer;
+    transition: .2s;
+}
+div.tab .usericon {
+    margin-right: 5px;
+}
+.usericon {
+    overflow: hidden !important;
+    display: inline-grid;
+    grid-template-columns: 1fr;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: white;
+}
+.usericon .outline {
+    z-index: 999;
+}
+.usericon div {
+    image-rendering: pixelated;
+    background-size: 100%;
+    width: 100% !important;
+    height: 100% !important;
+    grid-row-start: 1;
+    grid-column-start: 1;
+}
+div.filler {
+    width: 100%;
+    height: calc(var(--navbar-height) + (var(--navbar-height) / 1.3));
+    margin-bottom: 30px;
+}
+main {
+    margin: 30px;
+    margin-top: 0px;
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    border: var(--border) 1px solid;
+    box-shadow: 0px 2px 2px black;
+    min-height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer {
+    background-color: #191919;
+    width: 100%;
+    height: min-content;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    user-select: none;
+    font-size: 14px;
+}
+footer .container {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+footer .container .content {
+    width: 100%;
+    text-align: left;
+}
+.content span {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: inline-block;
+    filter: opacity(80%);
+    transition: .2s;
+}
+.content span:hover {
+    filter: opacity(100%);
+    cursor: pointer;
+    transition: .2s;
+}
+footer .container hr {
+    width: 80%;
+    border: 2px solid var(--shopping-accent);
+    color: var(--shopping-accent);
+}
+footer h3 {
+    margin: 0;
+    text-align: center;
+}
+footer .socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    flex-wrap: wrap;
+    font-size: 30px;
+}
+.socials i {
+    margin: 3px;
+    filter: opacity(75%);
+    transition: .2s;
+}
+.socials i:hover {
+    cursor: pointer;
+    filter: opacity(100%) !important;
+    transition: .2s;
+}
+
+.adbanner {
+    width: 100%;
+    background-color: var(--gofundme-accent);
+    color: white;
+    padding: 10px;
+    font-weight: 900;
+    box-sizing: border-box;
+    font-style: italic;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    flex-direction: column;
+    user-select: none;
+    background-image: url(assets/misc.png);
+}
+.adbanner h2 {
+    margin: 0;
+    font-size: 35px;
+    font-weight: 900;
+}
+
+.productGrid {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.productGrid .product {
+    text-align: center;
+    background-color: white;
+    border-radius: 5px;
+    margin: 25px;
+    width: fit-content;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 0;
+    max-width: 200px;
+
+    border: white 1px solid;
+    box-shadow: 0px 2px 0px white;
+
+    transition: 0.2s;
+    text-align: left;
+    user-select: none;
+}
+.product .usericon {
+    border: 2px black solid;
+}
+.product span {
+    width: 200px;
+}
+.product .priceSection {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.review {
+    width: 200px;
+    color: var(--shopping-accent);
+}
+.sale .review {
+    color: var(--gofundme-accent);
+}
+.sale button.cart {
+    background: var(--gofundme-accent);
+}
+button.cart {
+    border: none;
+    background-color: var(--shopping-accent);
+    color: white;
+    padding: 3px 20px;
+    border-radius: 5px;
+    font-weight: 900;
+}
+button.cart:hover {
+    background-color: #46acff;
+    cursor: pointer;
+}
+button.cart:active {
+    background-color: #1c77c1;
+}
+button.cart {
+    display: flex;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+}
+.price {
+    font-weight: 600;
+    color: var(--shopping-accent);
+}
+.product:hover {
+    cursor: pointer;
+    border: var(--border) 1px solid;
+    box-shadow: -4px 8px 4px rgba(0, 0, 0, 0.475);
+    transition: 0.2s;
+    transform: scale(105%) skew(3deg, 3deg) translateY(-5%);
+}
+.product .name {
+    font-weight: 900;
+    font-size: 20px;
+    max-width: 200px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.product .usericon {
+    width: 200px;
+    height: 200px;
+    border-radius: 0px;
+}
+
+.sale {
+    color: var(--gofundme-accent);
+}
+.saled {
+    font-size: 10px;
+    margin-left: 5px;
+    text-decoration:line-through;
+    filter: opacity(50%);
+}
+.salesDiv {
+    display: flex;
+    text-align: center;
+}
+.salesDiv span {
+    width: fit-content;
+    background-color: var(--gofundme-accent);
+    color: white;
+    font-weight: 900;
+    height: fit-content;
+    position: relative;
+    top: -3px;
+    left: -15px;
+    padding: 5px 10px;
+    padding-left: 20px;
+    transform: skewX(-20deg);
+}
+
+.mahoraga {
+    z-index: 0; 
+    animation-name: mahoragaSpin;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes mahoragaSpin {
+    from {
+        transform: translateY(-30%) rotate(0deg);
+    }
+    to {
+        transform: translateY(-30%) rotate(360deg);
+    }
+}
+
+@keyframes example {
+    from {
+        background-position: 0px 0px;
+    }
+
+    to {
+        background-position: 200px 195px;
+    }
+}
