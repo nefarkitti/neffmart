@@ -134,7 +134,7 @@ function loadEverything(scrolling) {
                 icon.innerHTML += `
                 <div class="outline" style="background-image: url('');z-index:99999;">
                 <div class="salesDiv">
-                <span>${off}% OFF!</span>
+                <span class="off">${off}% OFF!</span>
                 </div>
                 </div>
                 `
@@ -155,7 +155,7 @@ function loadEverything(scrolling) {
         });
 
         if (scrolling) {
-            document.getElementById("footer").scrollIntoView()
+            document.getElementById("seemore").scrollIntoView()
         }
     
     });
